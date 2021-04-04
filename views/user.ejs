@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="#">
+    <title>card Detail</title>
+</head>
+
+<body style="padding: 50px;">
+
+
+    <div class="cards row mt-5 d-flex justify-content-center">
+
+        <div class="pages mt-3 col-12 col-md-6 col-lg-4">
+            <div class="card">
+
+
+                <div class="card-body">
+                    <h5 class="card-title">user name:
+                        <%=user_id.username %>
+                    </h5>
+                    <p class="card-text">email:
+                        <%=user_id.email %> <span></span></p>
+                    <p>gender:
+                        <%= user_id.gender %>
+                    </p>
+                    <p>login status:
+                        <%= user_id.isLoggedIn%>
+                    </p>
+                    <button class="logOut w-90 btn btn-lg btn-outline-danger"> Log Out</button>
+                    <button class="edit w-90 btn btn-lg btn-outline-secondary " onclick="document.getElementById('id01').style.display='block'">edit</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- modal -->
+
+
+    <div id="id01" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container ">
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h1 class="card-title">user name:
+                    <%=user_id.username %>
+                </h1>
+                <input type="text" class="user" value='<%=user_id.username %>' disabled>
+
+                <p class="card-title">pass:</p>
+
+                <input type="password" class="pass" placeholder='password'>
+                <p class="card-text">email:
+                    <%=user_id.email %> <span></span></p>
+                <input type="text" class="email" placeholder='email'>
+                <br>
+                <label>gender:
+                    <%= user_id.gender %>
+                </label>
+                <br>
+                <input type="text" class="gender" placeholder='gender'>
+                <br>
+                <button class="save w-90 btn btn-lg btn-outline-secondary " style="margin: 5px 0 5px 0;">save</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js "></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css " rel="stylesheet " integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1 " crossorigin="anonymous ">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js " integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW " crossorigin="anonymous "></script>
+    <script src="../edit.js"></script>
+</body>
+
+</html>
